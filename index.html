@@ -16,11 +16,15 @@
     <header>
       <div class="container">
         <img src="images/logo.png" />
+        <select name="filterByGenre" v-model="filter" id="filter-by-genre">
+          <option value="all" selected>All</option>
+          <option v-for="genre in genres" :value="genre">{{genre}}</option>
+        </select>
       </div>
     </header>
     <main class="container">
       <section id="album-container">
-        <div v-for="disc in discs" class="card">
+        <div v-for="disc in filterByGenre" class="card">
           <img :src="disc.poster" :alt="disc.title" />
           <h2 class="title">{{disc.title}}</h2>
           <address class="author">{{disc.author}}</address>

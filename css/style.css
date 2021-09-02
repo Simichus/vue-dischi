@@ -35,6 +35,11 @@ header {
   width: 100%;
 }
 
+header div {
+  display: flex;
+  justify-content: space-between;
+}
+
 header img {
   height: 50px;
 }
