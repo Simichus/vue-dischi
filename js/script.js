@@ -14,7 +14,9 @@ const app = new Vue({
       const filteredDiscs = this.discs.filter(
         (disc) => disc.genre === filter || filter === "all"
       );
-      return filteredDiscs;
+      return filteredDiscs.sort((a, b) => {
+        return parseInt(a.year) - parseInt(b.year);
+      });
     },
     genres() {
       const genres = [];
